@@ -13,7 +13,7 @@ int glob = 0;
 int global = 10;
 
 
-class domestic_Reserve // 국내예약 클래스
+class domestic_Reserve // 국내예약 클래스 (안유성)
 {
 protected:
    int flight_numbering;
@@ -140,7 +140,7 @@ public:
    }
 };
 
-class international_Reserve // 국제선 예약 함수 선언 및 정의
+class international_Reserve // 국제선 예약 함수 선언 및 정의 (안유성)
 {
 protected:
    int flight_numberingi;
@@ -272,7 +272,7 @@ public:
    }
 };
 
-class passenger
+class passenger // (김보현)
    : public domestic_Reserve,
    public international_Reserve
 {
@@ -356,7 +356,7 @@ public:
    }
 };
 
-class payment //결제
+class payment //결제 (박솔지)
 {
 protected:
    long int sel, bank_sel, card_no, thru, cvc, dep_name;
@@ -427,7 +427,7 @@ public:
    }
 };
 
-void makefile(passenger psg)//국내선 파일 생성
+void makefile(passenger psg)//국내선 파일 생성 (김보현)
 {
    long int contact_number = psg.getContact();
 
@@ -454,7 +454,7 @@ void makefile(passenger psg)//국내선 파일 생성
    chdir("..");
 }
 
-void cancellation_ticket(int ccl) // 예매한 티켓 취소
+void cancellation_ticket(int ccl) // 예매한 티켓 취소 (박솔지)
 {
    passenger psg;
    int fd = 0;
@@ -482,7 +482,7 @@ void cancellation_ticket(int ccl) // 예매한 티켓 취소
    rename("domestic1.txt", "domestic.txt"); //이름 바꾸기
 }
 
-void checking_ticket(int ct) // 항공편 번호나 티켓 정보 확인하기
+void checking_ticket(int ct) // 항공편 번호나 티켓 정보 확인하기 (정기현)
 {
    passenger psg;
    int fd = 0;
@@ -503,7 +503,7 @@ void checking_ticket(int ct) // 항공편 번호나 티켓 정보 확인하기
    if (fd == 0)   // fd==0이면 해당 번호 못 찾은거
       cout << "해당 티켓을 찾을 수 없습니다." << endl;
 }
-void makefilei(passenger psg) // 국제선 예약 파일 열기
+void makefilei(passenger psg) // 국제선 예약 파일 열기 (김보현)
 {
    long int contact_number = psg.getContact();
 
@@ -529,7 +529,7 @@ void makefilei(passenger psg) // 국제선 예약 파일 열기
    chdir("..");
 }
 
-void cancellation_ticketi(int cti) // 티켓 취소 함수
+void cancellation_ticketi(int cti) // 티켓 취소 함수 (박솔지)
 {
    passenger psg;
    int fd = 0;
@@ -556,7 +556,7 @@ void cancellation_ticketi(int cti) // 티켓 취소 함수
    remove("international.txt");                       // 이전 파일 삭제
    rename("international1.txt", "international.txt"); 
 }
-void checking_ticketi(int cti) 
+void checking_ticketi(int cti) //(정기현)
 {
    passenger psg;
    int fd = 0;
@@ -578,7 +578,7 @@ void checking_ticketi(int cti)
       cout << "해당 티켓을 찾을 수 없습니다." << endl;
 }
 
-int main()
+int main() // (정기현 총괄)
 {
    class domestic_Reserve d1;     
    class international_Reserve i1; 
